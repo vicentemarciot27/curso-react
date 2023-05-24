@@ -1,17 +1,44 @@
 import React from "react";
+import "./Contador.css";
+import Display from "./Display";
+import Input from "../formulario/Input";
+import Botoes from "./Botoes";
+import PassoForm from "./PassoForm";
 
 export default class Contador extends React.Component {
-
     state = {
-        numero: this.props.numeroInicial
-    }
+        numero: this.props.numeroInicial,
+    };
+
+    inc = () => {
+        this.setState({
+            numero: this.state.numero + this.state.passo,
+        });
+    };
+
+    dec = () => {
+        this.setState({
+            numero: this.state.numero - this.state.passo,
+        });
+    };
+
+    setPasso = (novoPasso) => {
+        this.setState({
+            passo: novoPasso,
+        });
+    };
 
     render() {
-        return(
-            <div>
+        return (
+            <div className="Contador">
                 <h2>Contador</h2>
-                <p>Valor Inicial: {this.state.numero}</p>
+                <Display numero={this.state.numero}></Display>
+                <PassoForm
+                    passo={this.state.passo}
+                    setPasso={this.setPasso}
+                ></PassoForm>
+                <Botoes setInc={this.inc} setDec={this.dec}></Botoes>
             </div>
-        )
+        );
     }
 }
