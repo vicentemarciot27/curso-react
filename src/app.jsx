@@ -12,24 +12,30 @@ import ParOuImpar from "./components/condicional/ParOuImpar";
 import UsuarioInfo from "./components/condicional/UsuarioInfo";
 import DiretaPai from "./components/comunicacao/DiretaPai";
 import IndiretaPai from "./components/comunicacao/IndiretaPai";
+import Input from "./components/formulario/Input";
+import Contador from "./components/contador/Contador";
 
 export default () => (
     <div id="App">
         <h1>Fundamentos React</h1>
 
         <div className="Cards">
-            <Card1 título = "#10 - Indireta Pai">
+            <Card1 título="#12 - Contador" color = "#304A30">
+                <Contador numeroInicial={10}></Contador>
+            </Card1>
+            <Card1 título="#11 Componente Controlado (Input)">
+                <Input></Input>
+            </Card1>
+            <Card1 título="#10 - Indireta Pai">
                 <IndiretaPai></IndiretaPai>
             </Card1>
-            <Card1 título = "#9 - Pais e Filhos">
+            <Card1 título="#9 - Pais e Filhos">
                 <DiretaPai></DiretaPai>
             </Card1>
-            <Card1
-                título="#8 - Render Condit"
-                color="#F46318">
-                    <ParOuImpar></ParOuImpar>
-                    <UsuarioInfo usuario={{nome: "Fernando"}}></UsuarioInfo>
-                    <UsuarioInfo usuario={{email: "fer@nando.com"}}></UsuarioInfo>
+            <Card1 título="#8 - Render Condit" color="#F46318">
+                <ParOuImpar></ParOuImpar>
+                <UsuarioInfo usuario={{ nome: "Fernando" }}></UsuarioInfo>
+                <UsuarioInfo usuario={{ email: "fer@nando.com" }}></UsuarioInfo>
             </Card1>
             <Card1 título="#7 Desafio Repetição">
                 <TabelaProdutos></TabelaProdutos>
